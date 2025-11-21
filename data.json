@@ -1,0 +1,163 @@
+{
+  "titulo_guia": "Guia Interativo: Encontrando Sua Linguagem de Programação Ideal",
+  "descricao": "Um sistema de perguntas e respostas para direcionar o usuário à melhor linguagem com base em seus objetivos.",
+  "passos": [
+    {
+      "id": "ETAPA_1_OBJETIVO",
+      "pergunta": "Qual é o seu principal objetivo de programação?",
+      "opcoes": [
+        {
+          "letra": "A",
+          "texto": "Quero construir websites (Front-end e/ou Back-end).",
+          "proximo_passo": "ETAPA_2_WEB"
+        },
+        {
+          "letra": "B",
+          "texto": "Quero criar aplicativos para celulares (iOS e/ou Android).",
+          "proximo_passo": "ETAPA_3_MOBILE"
+        },
+        {
+          "letra": "C",
+          "texto": "Quero trabalhar com análise de dados, inteligência artificial (IA) ou aprendizado de máquina (ML).",
+          "proximo_passo": "ETAPA_4_DADOS"
+        },
+        {
+          "letra": "D",
+          "texto": "Quero desenvolver jogos ou sistemas que exigem alta performance e controle de hardware.",
+          "proximo_passo": "ETAPA_5_PERFORMANCE"
+        },
+        {
+          "letra": "E",
+          "texto": "Estou apenas começando e quero uma linguagem fácil de aprender e versátil.",
+          "proximo_passo": "ETAPA_6_INICIANTE"
+        }
+      ]
+    },
+    {
+      "id": "ETAPA_2_WEB",
+      "pergunta": "Qual parte do desenvolvimento web te interessa mais?",
+      "opcoes": [
+        {
+          "letra": "A1",
+          "texto": "A parte visual do site (Front-end).",
+          "resultado": {
+            "linguagem": "JavaScript",
+            "detalhe": "Com HTML/CSS e frameworks como React, Vue ou Angular."
+          }
+        },
+        {
+          "letra": "A2",
+          "texto": "A lógica do servidor e banco de dados (Back-end).",
+          "resultado": {
+            "linguagem": "Python / JavaScript / PHP / Ruby",
+            "detalhe": "Python (Django/Flask), JavaScript (Node.js), PHP (Laravel) ou Ruby (Rails)."
+          }
+        },
+        {
+          "letra": "A3",
+          "texto": "Ambas (Full-Stack).",
+          "resultado": {
+            "linguagem": "JavaScript",
+            "detalhe": "Permite usar uma única linguagem (Node.js no Back-end, React/Vue no Front-end) para todo o projeto."
+          }
+        }
+      ]
+    },
+    {
+      "id": "ETAPA_3_MOBILE",
+      "pergunta": "Você precisa de um app nativo (melhor performance) ou multiplataforma (código único)?",
+      "opcoes": [
+        {
+          "letra": "B1",
+          "texto": "Quero um aplicativo nativo de alta performance para Android.",
+          "resultado": {
+            "linguagem": "Kotlin",
+            "detalhe": "A linguagem oficial e moderna para o ecossistema Android."
+          }
+        },
+        {
+          "letra": "B2",
+          "texto": "Quero um aplicativo nativo de alta performance para iOS (iPhone/iPad).",
+          "resultado": {
+            "linguagem": "Swift",
+            "detalhe": "A linguagem moderna da Apple para desenvolvimento iOS."
+          }
+        },
+        {
+          "letra": "B3",
+          "texto": "Quero um código único que rode tanto em Android quanto em iOS (Multiplataforma).",
+          "resultado": {
+            "linguagem": "Dart (Flutter) / JavaScript (React Native)",
+            "detalhe": "Flutter (Dart) é uma excelente opção em ascensão para performance próxima do nativo."
+          }
+        }
+      ]
+    },
+    {
+      "id": "ETAPA_4_DADOS",
+      "pergunta": "Qual é o seu foco na área de dados?",
+      "opcoes": [
+        {
+          "letra": "C1",
+          "texto": "Análise de dados, Machine Learning e IA.",
+          "resultado": {
+            "linguagem": "Python",
+            "detalhe": "Padrão da indústria com bibliotecas poderosas (Pandas, TensorFlow, etc.)."
+          }
+        },
+        {
+          "letra": "C2",
+          "texto": "Estatística, pesquisa acadêmica ou visualização complexa.",
+          "resultado": {
+            "linguagem": "R / Python",
+            "detalhe": "R é muito forte em estatística. Python é mais versátil."
+          }
+        }
+      ]
+    },
+    {
+      "id": "ETAPA_5_PERFORMANCE",
+      "pergunta": "Seu projeto exige controle de memória e extrema velocidade?",
+      "opcoes": [
+        {
+          "letra": "D1",
+          "texto": "Sim, para jogos AAA, sistemas operacionais ou drivers de hardware.",
+          "resultado": {
+            "linguagem": "C++",
+            "detalhe": "Oferece controle de memória e performance inigualáveis."
+          }
+        },
+        {
+          "letra": "D2",
+          "texto": "Não, preciso de segurança e bom desempenho para sistemas de alta concorrência (Back-end/Microsserviços).",
+          "resultado": {
+            "linguagem": "Go (Golang) / Rust",
+            "detalhe": "Rust foca em segurança; Go é excelente para serviços de rede rápidos."
+          }
+        }
+      ]
+    },
+    {
+      "id": "ETAPA_6_INICIANTE",
+      "pergunta": "O que você valoriza mais para começar?",
+      "opcoes": [
+        {
+          "letra": "E1",
+          "texto": "Facilidade de leitura, sintaxe simples e alta versatilidade no mercado.",
+          "resultado": {
+            "linguagem": "Python",
+            "detalhe": "Sintaxe limpa, ideal para primeiros passos e com uso em diversas áreas (Web, Dados, Automação)."
+          }
+        },
+        {
+          "letra": "E2",
+          "texto": "Aprender algo imediatamente útil para o navegador e o mundo web.",
+          "resultado": {
+            "linguagem": "JavaScript",
+            "detalhe": "Essencial para o front-end e pode ser usada em todo o desenvolvimento (Full-Stack) com Node.js."
+          }
+        }
+      ]
+    }
+  ]
+}

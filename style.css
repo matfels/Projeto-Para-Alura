@@ -1,0 +1,76 @@
+/* Reset básico para melhor consistência */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #545471;
+    color: #ffffff;
+    text-align: center; 
+}
+
+/* Estilo para o cabeçalho e título */
+header {
+    background-color: #545471;
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgb(55, 36, 63);
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* Estilo para o conteúdo principal */
+.container {
+    /* Aumentado para 90% da largura da tela */
+    max-width: 90%; 
+    margin: 40px auto;
+    padding: 20px;
+    background-color: rgb(66, 58, 86);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para a área dos botões */
+.botoes-container {
+    /* Alterado para display: flex e flex-direction: column para empilhar */
+    
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Aumento o espaço entre os botões */
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+/* Estilo individual para os botões */
+.opcao-btn {
+    /* Faz o botão ocupar 100% da largura do seu container (.botoes-container) */
+    width: 100%; 
+    /* Aumento o padding para torná-los grandes */
+    padding: 20px; 
+    font-size: 24px; /* Aumento o tamanho da fonte */
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    background-color: #2e5077;
+    color: white;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(55, 36, 63); /* Adiciona uma sombra para destaque */
+}
+
+.opcao-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px); /* Efeito sutil ao passar o mouse */
+}
+
+/* Estilo para a mensagem de resultado */
+#mensagem-resultado {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #331a7e;
+    border-radius: 5px;
+    background-color: #2e5077;
+}
