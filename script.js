@@ -15,7 +15,7 @@ const cardcontainer = document.querySelector(".card-container")
 
 // Obtém todos os botões com a classe 'opcao-btn'
 const botoes = document.querySelectorAll('.opcao-btn');
-console.log(botoes)
+
 
 
 
@@ -46,18 +46,23 @@ botoes.forEach(button => {
                         dadoInserir.push(botao1[dado].texto)
                     }
                     renderizarCards(dadoInserir, botaoId) // Renderiza o card com o texto correto
+                    renderizarResultadoFinal(" ",botaoId)
+
                 break;
                 
                 case 'btn2':
                     mensagem = 'Você escolheu a opção quero criar aplicativos para celulares 📱🤳🏼';
+                    proxima = "Você precisa de um app nativo (melhor performance) ou multiplataforma (código único)?";
                     botao1 = dados.passos[2].opcoes;
                     for (dado in botao1){
                         dadoInserir.push(botao1[dado].texto)        
                     }
                     
                     renderizarCards(dadoInserir, botaoId);
+                    renderizarResultadoFinal(" ",botaoId)
                 break;
                 case 'btn3':
+                    proxima = "Qual é o seu foco na área de dados?"
                     mensagem = 'Você escolheu a opção quero trabalhar com análise de dados, inteligência artificial (IA) ou aprendizado de máquina (ML). 📊🤖';
                     botao1 = dados.passos[3].opcoes;
                     
@@ -66,8 +71,10 @@ botoes.forEach(button => {
                     }
                     
                     renderizarCards(dadoInserir, botaoId);
+                    renderizarResultadoFinal(" ",botaoId)
                     break;
                 case 'btn4':
+                    proxima = 'Seu projeto exige controle de memória e extrema velocidade?'
                     mensagem = 'Você escolheu a opção quero desenvolver jogos, ou sistemas que exigem alta performance e controle de hardware. 🎮🖥';
                     botao1 = dados.passos[4].opcoes;
                 
@@ -75,22 +82,23 @@ botoes.forEach(button => {
                     dadoInserir.push(botao1[dado].texto)  
                     }                    
                     
-                    renderizarCards(dadoInserir, botaoId);
+                    renderizarCards(dadoInserir, botaoId)
+                    renderizarResultadoFinal(" ",botaoId)
                     break;
                 case 'btn5':
-                    botao1 = dados.passos[2].opcoes;
-
+                    proxima = 'O que você valoriza mais para começar?'
+                    mensagem = 'Você escolheu a opção quero uma linguagem fácil de aprender e versátil. 👨🏽‍💻📚';
+                    botao1 = dados.passos[5].opcoes;
+                        
+                        
                     for (dado in botao1){
                     dadoInserir.push(botao1[dado].texto)  
-                    }
-                    
-                    renderizarCards(bodadoInserirtao1), botaoId;
-                    mensagem = 'Você escolheu a opção quero uma linguagem fácil de aprender e versátil. 👨🏽‍💻📚';
-                break;
-                case 'btn6':
-                    console.log("==================== case 6 =====================")
-                break;
-                
+                    }     
+                    console.log(dadoInserir)               
+                   
+                    renderizarCards(dadoInserir, botaoId)
+                    renderizarResultadoFinal(" ",botaoId)
+                    break;
                 default:
                     mensagem = 'Você escolheu a opção quero';
 
@@ -107,6 +115,35 @@ botoes.forEach(button => {
 // Chama a função para carregar os dados assim que o script for executado.
 carregarDados();
 
+function renderizarResultadoFinal(texto, botaoId){
+    const retornofinal = document.getElementById('retorno-final');
+    if (botaoId === 'btn6'){    
+        retornofinal.innerHTML = `<h2>${texto}<h2>`
+        } else {
+        texto = " "
+        retornofinal.innerHTML = `<h2>${texto}<h2>`
+            
+
+        }
+    }
+
+function clicarBotao(botaoId){
+    switch (botaoId) {
+        case 'btn6':
+            resposta = (dados.passos[1].opcoes[0].resultado.detalhe);
+            renderizarResultadoFinal(resposta, botaoId)
+        break;
+        case 'btn7':
+            console.log("Clicou no botão 'btn7' ");
+            resposta = (dados.passos[1].opcoes[0].resultado.detalhe);
+            renderizarResultadoFinal(resposta, botaoId)            
+        break;
+        case 'btn8':
+            console.log("Clicou no botão 'btn8' ");
+        break;
+    }
+}
+
 
 
 function renderizarCards(texto, botaoId){
@@ -118,24 +155,20 @@ function renderizarCards(texto, botaoId){
 
         article.innerHTML = `
         <div class="botoes-container">
-        <button id="btn6" class="opcao-btn">${texto[0]}</button>
-        <button id="btn7" class="opcao-btn">${texto[1]}</button>
-        <button id="btn8" class="opcao-btn">${texto[2]}</button>
+        <button id="btn6" class="opcao-btn" onclick="clicarBotao('btn6')">${texto[0]}</button>
+        <button id="btn7" class="opcao-btn" onclick="clicarBotao('btn7')">${texto[1]}</button>
+        <button id="btn8" class="opcao-btn" onclick="clicarBotao('btn8')">${texto[2]}</button>
         </div>
         `
         cardcontainer.appendChild(article); // Dizendo que vamos anexar um filho dentro desse container.
-    }else if (botaoId === 'btn3' || botaoId === 'btn4'){
+    }else if (botaoId === 'btn3' || botaoId === 'btn4' || botaoId === 'btn5'){
         article.innerHTML = `
         <div class="botoes-container">
-        <button id="btn6" class="opcao-btn">${texto[0]}</button>
-        <button id="btn7" class="opcao-btn">${texto[1]}</button>
+        <button id="btn6" class="opcao-btn" onclick="clicarBotao('btn6')">${texto[0]}</button>
+        <button id="btn7" class="opcao-btn" onclick="clicarBotao('btn7')">${texto[1]}</button>
         </div>
         `
         cardcontainer.appendChild(article); // Dizendo que vamos anexar um filho dentro desse container.
     }
 
-
 }
- 
-    
-
