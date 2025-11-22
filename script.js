@@ -80,7 +80,7 @@ botoes.forEach(button => {
                     proxima = 'Seu projeto exige controle de memória e extrema velocidade?'
                     mensagem = 'Você escolheu a opção quero desenvolver jogos, ou sistemas que exigem alta performance e controle de hardware. 🎮🖥';
                     botao1 = dados.passos[4].opcoes;
-                    Idbotao =  ['btn15', 'btn16']
+                    Idbotao =  ['btn14', 'btn15']
                 
                     for (dado in botao1){
                     dadoInserir.push(botao1[dado].texto)  
@@ -93,7 +93,7 @@ botoes.forEach(button => {
                     proxima = 'O que você valoriza mais para começar?'
                     mensagem = 'Você escolheu a opção quero uma linguagem fácil de aprender e versátil. 👨🏽‍💻📚';
                     botao1 = dados.passos[5].opcoes;
-                    Idbotao =  ['btn18', 'btn19' ]    
+                    Idbotao =  ['btn16', 'btn17' ]    
                         
                     for (dado in botao1){
                     dadoInserir.push(botao1[dado].texto)  
