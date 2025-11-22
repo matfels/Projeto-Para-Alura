@@ -41,11 +41,12 @@ botoes.forEach(button => {
                     mensagem = 'Você escolheu a opção quero construir websites 💻🌐.';
                     proxima = "Qual parte do desenvolvimento web te interessa mais?";
                     botao1 = dados.passos[1].opcoes;
+                    Idbotao =  ['btn6', 'btn7', 'btn8']
                     
                     for (dado in botao1){
                         dadoInserir.push(botao1[dado].texto)
                     }
-                    renderizarCards(dadoInserir, botaoId) // Renderiza o card com o texto correto
+                    renderizarCards(dadoInserir, botaoId, Idbotao) // Renderiza o card com o texto correto
                     renderizarResultadoFinal(" ",botaoId)
 
                 break;
@@ -54,49 +55,51 @@ botoes.forEach(button => {
                     mensagem = 'Você escolheu a opção quero criar aplicativos para celulares 📱🤳🏼';
                     proxima = "Você precisa de um app nativo (melhor performance) ou multiplataforma (código único)?";
                     botao1 = dados.passos[2].opcoes;
+                    Idbotao =  ['btn9', 'btn10', 'btn11']
                     for (dado in botao1){
                         dadoInserir.push(botao1[dado].texto)        
                     }
                     
-                    renderizarCards(dadoInserir, botaoId);
+                    renderizarCards(dadoInserir, botaoId, Idbotao);
                     renderizarResultadoFinal(" ",botaoId)
                 break;
                 case 'btn3':
                     proxima = "Qual é o seu foco na área de dados?"
                     mensagem = 'Você escolheu a opção quero trabalhar com análise de dados, inteligência artificial (IA) ou aprendizado de máquina (ML). 📊🤖';
                     botao1 = dados.passos[3].opcoes;
+                    Idbotao =  ['btn12', 'btn13']
                     
                     for (dado in botao1){
                         dadoInserir.push(botao1[dado].texto)
                     }
                     
-                    renderizarCards(dadoInserir, botaoId);
+                    renderizarCards(dadoInserir, botaoId, Idbotao);
                     renderizarResultadoFinal(" ",botaoId)
                     break;
                 case 'btn4':
                     proxima = 'Seu projeto exige controle de memória e extrema velocidade?'
                     mensagem = 'Você escolheu a opção quero desenvolver jogos, ou sistemas que exigem alta performance e controle de hardware. 🎮🖥';
                     botao1 = dados.passos[4].opcoes;
+                    Idbotao =  ['btn15', 'btn16']
                 
                     for (dado in botao1){
                     dadoInserir.push(botao1[dado].texto)  
                     }                    
                     
-                    renderizarCards(dadoInserir, botaoId)
+                    renderizarCards(dadoInserir, botaoId, Idbotao)
                     renderizarResultadoFinal(" ",botaoId)
                     break;
                 case 'btn5':
                     proxima = 'O que você valoriza mais para começar?'
                     mensagem = 'Você escolheu a opção quero uma linguagem fácil de aprender e versátil. 👨🏽‍💻📚';
                     botao1 = dados.passos[5].opcoes;
-                        
+                    Idbotao =  ['btn18', 'btn19' ]    
                         
                     for (dado in botao1){
                     dadoInserir.push(botao1[dado].texto)  
-                    }     
-                    console.log(dadoInserir)               
+                    }                    
                    
-                    renderizarCards(dadoInserir, botaoId)
+                    renderizarCards(dadoInserir, botaoId, Idbotao)
                     renderizarResultadoFinal(" ",botaoId)
                     break;
                 default:
@@ -117,7 +120,8 @@ carregarDados();
 
 function renderizarResultadoFinal(texto, botaoId){
     const retornofinal = document.getElementById('retorno-final');
-    if (botaoId === 'btn6'){    
+    if (botaoId === 'btn6' || botaoId === 'btn7' || botaoId === 'btn8' || botaoId === 'btn9' || botaoId === 'btn10' || botaoId === 'btn11' || botaoId === 'btn12' || botaoId === 'btn13' || botaoId === 'btn14' || botaoId === 'btn15' || botaoId === 'btn16' || botaoId === 'btn17' || botaoId === 'btn18' || botaoId === 'btn19'){
+
         retornofinal.innerHTML = `<h2>${texto}<h2>`
         } else {
         texto = " "
@@ -130,42 +134,100 @@ function renderizarResultadoFinal(texto, botaoId){
 function clicarBotao(botaoId){
     switch (botaoId) {
         case 'btn6':
-            resposta = (dados.passos[1].opcoes[0].resultado.detalhe);
+            resposta = (dados.passos[1].opcoes[0].resultado.linguagem) + ". " + (dados.passos[1].opcoes[0].resultado.detalhe ) ;
             renderizarResultadoFinal(resposta, botaoId)
         break;
         case 'btn7':
             console.log("Clicou no botão 'btn7' ");
-            resposta = (dados.passos[1].opcoes[0].resultado.detalhe);
+            resposta = (dados.passos[1].opcoes[1].resultado.linguagem)+ ". " + (dados.passos[1].opcoes[1].resultado.detalhe);
             renderizarResultadoFinal(resposta, botaoId)            
         break;
         case 'btn8':
-            console.log("Clicou no botão 'btn8' ");
+            resposta = (dados.passos[1].opcoes[2].resultado.linguagem) + ". " + (dados.passos[1].opcoes[2].resultado.detalhe ) ;
+            renderizarResultadoFinal(resposta, botaoId)            
+
+        break;
+        case 'btn9':
+            resposta = (dados.passos[2].opcoes[0].resultado.linguagem) + ". " + (dados.passos[2].opcoes[0].resultado.detalhe ) ;
+            renderizarResultadoFinal(resposta, botaoId)            
+
+        break;
+        case 'btn10':
+            resposta = (dados.passos[2].opcoes[1].resultado.linguagem) + ". " + (dados.passos[2].opcoes[1].resultado.detalhe ) ;
+            renderizarResultadoFinal(resposta, botaoId)            
+
+        break;
+        case 'btn11':
+            resposta = (dados.passos[2].opcoes[2].resultado.linguagem) + ". " + (dados.passos[2].opcoes[2].resultado.detalhe ) ;
+            renderizarResultadoFinal(resposta, botaoId)            
+
+        break;
+        case 'btn12':
+            resposta = (dados.passos[3].opcoes[0].resultado.linguagem) + ". " + (dados.passos[3].opcoes[0].resultado.detalhe ) ;
+            renderizarResultadoFinal(resposta, botaoId)            
+
+        break;
+        case 'btn13':
+            resposta = (dados.passos[3].opcoes[1].resultado.linguagem) + ". " + (dados.passos[3].opcoes[1].resultado.detalhe ) ;
+            renderizarResultadoFinal(resposta, botaoId)            
+
+        break;
+        case 'btn14':
+            resposta = (dados.passos[4].opcoes[0].resultado.linguagem) + ". " + (dados.passos[4].opcoes[0].resultado.detalhe ) ;
+            renderizarResultadoFinal(resposta, botaoId)            
+
+        break;
+        case 'btn15':
+            resposta = (dados.passos[4].opcoes[1].resultado.linguagem) + ". " + (dados.passos[4].opcoes[1].resultado.detalhe ) ;
+            renderizarResultadoFinal(resposta, botaoId)            
+
+        break;
+        case 'btn16':
+            resposta = (dados.passos[5].opcoes[0].resultado.linguagem) + ". " + (dados.passos[5].opcoes[0].resultado.detalhe ) ;
+            renderizarResultadoFinal(resposta, botaoId)            
+
+        break;
+        case 'btn17':
+            resposta = (dados.passos[5].opcoes[1].resultado.linguagem) + ". " + (dados.passos[5].opcoes[1].resultado.detalhe ) ;
+            renderizarResultadoFinal(resposta, botaoId)            
+
+        break;
+        case 'btn18':
+            resposta = (dados.passos[6].opcoes[0].resultado.linguagem) + ". " + (dados.passos[6].opcoes[0].resultado.detalhe ) ;
+            renderizarResultadoFinal(resposta, botaoId)            
+
+        break;
+        case 'btn19':
+            resposta = (dados.passos[6].opcoes[1].resultado.linguagem) + ". " + (dados.passos[6].opcoes[1].resultado.detalhe ) ;
+            renderizarResultadoFinal(resposta, botaoId)            
+
         break;
     }
 }
 
 
 
-function renderizarCards(texto, botaoId){
+function renderizarCards(texto, botaoId, Idbotao){
     cardcontainer.innerHTML = ""; // Limpa o container antes de adicionar novos cards.
     let article = document.createElement("article"); // A variável está recebendo a TAG <article></article>
     article.classList.add("card"); // Adicionando um "card" dentro da tag <article>
     // esse innerHTML diz qual dado será inserido, no caso HTML
+    console.log(Idbotao[0])
     if (botaoId === 'btn1' || botaoId === 'btn2'){
 
         article.innerHTML = `
         <div class="botoes-container">
-        <button id="btn6" class="opcao-btn" onclick="clicarBotao('btn6')">${texto[0]}</button>
-        <button id="btn7" class="opcao-btn" onclick="clicarBotao('btn7')">${texto[1]}</button>
-        <button id="btn8" class="opcao-btn" onclick="clicarBotao('btn8')">${texto[2]}</button>
+        <button id="btn6" class="opcao-btn" onclick="clicarBotao('${Idbotao[0]}')">${texto[0]}</button>
+        <button id="btn7" class="opcao-btn" onclick="clicarBotao('${Idbotao[1]}')">${texto[1]}</button>
+        <button id="btn8" class="opcao-btn" onclick="clicarBotao('${Idbotao[2]}')">${texto[2]}</button>
         </div>
         `
         cardcontainer.appendChild(article); // Dizendo que vamos anexar um filho dentro desse container.
     }else if (botaoId === 'btn3' || botaoId === 'btn4' || botaoId === 'btn5'){
         article.innerHTML = `
         <div class="botoes-container">
-        <button id="btn6" class="opcao-btn" onclick="clicarBotao('btn6')">${texto[0]}</button>
-        <button id="btn7" class="opcao-btn" onclick="clicarBotao('btn7')">${texto[1]}</button>
+        <button id="btn6" class="opcao-btn" onclick="clicarBotao('${Idbotao[0]}')">${texto[0]}</button>
+        <button id="btn7" class="opcao-btn" onclick="clicarBotao('${Idbotao[1]}')">${texto[1]}</button>
         </div>
         `
         cardcontainer.appendChild(article); // Dizendo que vamos anexar um filho dentro desse container.
